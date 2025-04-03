@@ -1,4 +1,8 @@
-/.direnv/
+.*
+!.github
+!.envrc
+!.gitignore
+
 /vendor/
 /vendor_prefixed/
 coverage/
