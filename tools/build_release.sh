@@ -21,9 +21,9 @@ rm -Rf $TMP_DIR/wp2static-addon-s3
 mkdir $TMP_DIR/wp2static-addon-s3
 
 # clear dev dependencies
-rm -Rf $EXEC_DIR/vendor/*
+#rm -Rf $EXEC_DIR/vendor/*
 # load prod deps and optimize loader
-composer install --quiet --no-dev --optimize-autoloader
+#composer install --no-dev --optimize-autoloader
 
 # cp all required sources to build dir
 cp -r $EXEC_DIR/*.php $TMP_DIR/wp2static-addon-s3/
@@ -43,11 +43,13 @@ cd -
 
 mkdir -p $HOME/Downloads/
 
-cp $TMP_DIR/$1.zip $HOME/Downloads/
+OUT_PATH="$HOME/Downloads/$1.zip"
+cp "$TMP_DIR/$1.zip" "$OUT_PATH"
+echo "$OUT_PATH"
 
 # reset dev dependencies
 cd $EXEC_DIR
 # clear dev dependencies
-rm -Rf $EXEC_DIR/vendor/*
+#rm -Rf $EXEC_DIR/vendor/*
 # load prod deps
-composer install --quiet
+#composer install --quiet
